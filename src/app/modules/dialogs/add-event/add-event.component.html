@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Add Appointment</h2>
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="addEventForm">
+        <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput minlength="4" formControlName="title">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field>
+                <mat-label>Time</mat-label>
+                <mat-select formControlName="time">
+                    <mat-option [value]="time" *ngFor="let time of timeList">{{ time }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="onSubmit()">Add</button>
+</mat-dialog-actions>
