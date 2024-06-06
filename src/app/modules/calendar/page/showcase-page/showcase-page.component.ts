@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalendarCell } from '../../components/calendar.component';
+import { CalendarCell } from '../../types/calendar-cell.type';
 
 @Component({
   selector: 'app-showcase-page',

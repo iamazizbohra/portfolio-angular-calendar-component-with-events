@@ -6,22 +6,9 @@ import { MatSelectChange } from '@angular/material/select';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { AddEventComponent } from '../dialogs/add-event/add-event.component';
 import { EditEventComponent } from '../dialogs/edit-event/edit-event.component';
+import { CalendarCell } from '../types/calendar-cell.type';
+import { CalendarEvent } from '../types/calendar-event.type';
 
-export type CalendarCell = {
-  date: Date,
-  year: number,
-  month: number,
-  day: number,
-}
-
-export type CalendarEvent = {
-  title: string,
-  date: Date,
-  year: number,
-  month: number,
-  day: number,
-  time: string,
-}
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
