@@ -16,11 +16,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { AddEventComponent } from '../dialogs/add-event/add-event.component';
-import { EditEventComponent } from '../dialogs/edit-event/edit-event.component';
-import { ShowcasePageComponent } from '../page/showcase-page/showcase-page.component';
-import { CalendarComponent } from '../components/calendar.component';
-
+import { CalendarComponent } from './components/calendar.component';
+import { AddEventComponent } from './dialogs/add-event/add-event.component';
+import { EditEventComponent } from './dialogs/edit-event/edit-event.component';
+import { ShowcasePageComponent } from './page/showcase-page/showcase-page.component';
 
 @NgModule({
   declarations: [
