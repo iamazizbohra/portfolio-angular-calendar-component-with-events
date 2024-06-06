@@ -1,0 +1,50 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        tr {
+            th {
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                text-align: center;
+
+                button {
+                    color: #aaaaaa;
+                    border: none;
+                    font-size: 20px;
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 3rem;
+                    margin: .5rem;
+                    background-color: transparent;
+                }
+
+                button.current-day {
+                    border: 1px solid #0000006b;
+                }
+
+                button.current-month {
+                    cursor: pointer;
+                    color: #000;
+                }
+
+                button.current-month:hover {
+                    background-color: #ccc;
+                }
+
+                button.selected {
+                    color: #fff;
+                    background-color: #333;
+                }
+            }
+        }
+    }
+}

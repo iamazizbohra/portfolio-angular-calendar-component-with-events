@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th *ngFor="let week of weekList">{{ week }}</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <br>
+            </td>
+        </tr>
+
+        <tr *ngFor="let rows of cellList">
+            <td *ngFor="let cell of rows">
+                <button (click)="dateSelectHandler(cell)"
+                    [ngClass]="{'current-day': cell.year == currentDate.getFullYear() && cell.month == currentDate.getMonth() && cell.day == currentDate.getDate(), 
+                                'current-month': cell.month == selectedMonth,
+                                'selected': selectedDate && cell.year == selectedDate.getFullYear() && cell.month == selectedDate.getMonth() && cell.day == selectedDate.getDate()
+                            }">
+                    {{ cell.day}}
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

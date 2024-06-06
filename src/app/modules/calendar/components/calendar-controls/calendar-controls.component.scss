@@ -1,0 +1,41 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .left {
+        display: flex;
+        align-items: center;
+
+        mat-form-field {
+            width: 150px;
+        }
+
+        .spacer {
+            margin-left: .5rem;
+            margin-right: .5rem;
+        }
+    }
+
+    .right {
+        display: flex;
+
+        .spacer {
+            margin-left: .25rem;
+            margin-right: .25rem;
+        }
+
+        mat-icon {
+            color: #333;
+            height: 44px;
+            width: 44px;
+            font-size: 44px;
+            cursor: pointer;
+        }
+
+        mat-icon:hover {
+            border-radius: 34px;
+            background-color: #ccc;
+        }
+    }
+}

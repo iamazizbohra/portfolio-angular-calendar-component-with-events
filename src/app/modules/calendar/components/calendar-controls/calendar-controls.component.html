@@ -1,0 +1,33 @@
+<div class="controls">
+    <div class="left">
+        <mat-form-field>
+            <mat-label>Select Year</mat-label>
+            <mat-select [(ngModel)]="selectedYear" (selectionChange)="onYearChange($event)">
+                <mat-option *ngFor="let year of yearList" [value]="year">{{year}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="spacer"></div>
+
+        <mat-form-field>
+            <mat-label>Select Month</mat-label>
+            <mat-select [(ngModel)]="selectedMonth" (selectionChange)="onMonthChange($event)">
+                <mat-option *ngFor="let month of monthList; let i = index" [value]="i">{{month}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="spacer"></div>
+
+        <button mat-flat-button color="primary" (click)="presentAddEventDialog()">Add Appointment</button>
+    </div>
+
+    <div class="right">
+        <mat-icon (click)="prevMonthHandler()" aria-hidden="false" aria-label="Left icon"
+            fontIcon="chevron_left"></mat-icon>
+
+        <div class="spacer"></div>
+
+        <mat-icon (click)="nextMonthHandler()" aria-hidden="false" aria-label="Right icon"
+            fontIcon="chevron_right"></mat-icon>
+    </div>
+</div>

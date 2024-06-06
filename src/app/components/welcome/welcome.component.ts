@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class WelcomeComponent {
 
-  constructor() { }
+  constructor(private router: Router) {
+
+  }
+
+  onClickHandler() {
+    this.router.navigate(['/calendar']);
+  }
 
 }

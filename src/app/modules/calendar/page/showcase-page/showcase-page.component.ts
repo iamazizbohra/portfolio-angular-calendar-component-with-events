@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CalendarCell } from '../../types/calendar-cell.type';
 
 @Component({
   selector: 'app-showcase-page',
@@ -13,7 +12,7 @@ export class ShowcasePageComponent {
     this.selectedDate = new Date();
   }
 
-  public dateSelectHandler(e: CalendarCell): void {
-    this.selectedDate = e.date
+  public dateSelectHandler(e: Date): void {
+    this.selectedDate = e;
   }
 }

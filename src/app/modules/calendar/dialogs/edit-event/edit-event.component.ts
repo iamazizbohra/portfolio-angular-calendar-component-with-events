@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CalendarEvent } from '../../types/calendar-event.type';
+import { InitService } from '../../services/init/init.service';
 
 @Component({
   selector: 'app-edit-event',
@@ -15,10 +16,11 @@ export class EditEventComponent {
   public timeList: string[];
 
   constructor(
+    private initService: InitService,
     public dialogRef: MatDialogRef<EditEventComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { timeList: string[], event: CalendarEvent },
   ) {
-    this.timeList = data.timeList;
+    this.timeList = this.initService.getTimeList();
 
     this.addEventForm = new FormGroup({
       title: new FormControl(data.event.title),
@@ -49,12 +51,9 @@ export class EditEventComponent {
       this.dialogRef.close({
         'role': 'delete',
         old: this.data.event,
-        new: {
-
-        }
+        new: {}
       });
     }
-
   }
 
 }

@@ -1,0 +1,48 @@
+<div class="events">
+    <div class="content" cdkDropListGroup>
+        <div class="prev-date">
+            <h2>{{ prevDate | date:'MMM d, y' }}</h2>
+
+            <div class="drag-list" id="drop-list-1" cdkDropList cdkDropListSortingDisabled="true"
+                [cdkDropListData]="eventList.prevDayEvents" (cdkDropListDropped)="onDropHandler($event)">
+
+                @for (item of eventList.prevDayEvents; track item) {
+                <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
+                    (click)="presentEditEventDialog(item)">
+                    {{ item.title }} <br> {{ item.time }}
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="curr-date">
+            <h2>{{ currDate | date:'MMM d, y' }}</h2>
+
+            <div class="drag-list" id="drop-list-2" cdkDropList cdkDropListSortingDisabled="true"
+                [cdkDropListData]="eventList.currDayEvents" (cdkDropListDropped)="onDropHandler($event)">
+
+                @for (item of eventList.currDayEvents; track item) {
+                <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
+                    (click)="presentEditEventDialog(item)">
+                    {{ item.title }} <br> {{ item.time }}
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="next-date">
+            <h2>{{ nextDate | date:'MMM d, y' }}</h2>
+
+            <div class="drag-list" id="drop-list-3" cdkDropList cdkDropListSortingDisabled="true"
+                [cdkDropListData]="eventList.nextDayEvents" (cdkDropListDropped)="onDropHandler($event)">
+
+                @for (item of eventList.nextDayEvents; track item) {
+                <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
+                    (click)="presentEditEventDialog(item)">
+                    {{ item.title }} <br> {{ item.time }}
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

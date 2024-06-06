@@ -16,17 +16,27 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { CalendarComponent } from './components/calendar.component';
 import { AddEventComponent } from './dialogs/add-event/add-event.component';
 import { EditEventComponent } from './dialogs/edit-event/edit-event.component';
 import { ShowcasePageComponent } from './page/showcase-page/showcase-page.component';
+import { InitService } from './services/init/init.service';
+import { DataService } from './services/data/data.service';
+import { DialogService } from './services/dialog/dialog.service';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { DateService } from './services/date/date.service';
+import { CalendarCellsComponent } from './components/calendar-cells/calendar-cells.component';
+import { CalendarControlsComponent } from './components/calendar-controls/calendar-controls.component';
+import { CalendarEventsComponent } from './components/calendar-events/calendar-events.component';
 
 @NgModule({
   declarations: [
     CalendarComponent,
     AddEventComponent,
     EditEventComponent,
-    ShowcasePageComponent
+    ShowcasePageComponent,
+    CalendarCellsComponent,
+    CalendarControlsComponent,
+    CalendarEventsComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +59,15 @@ import { ShowcasePageComponent } from './page/showcase-page/showcase-page.compon
     CdkDropList,
     CdkDrag
   ],
-  providers: [provideNativeDateAdapter()],
+  providers: [
+    InitService,
+    DataService,
+    DateService,
+    DialogService,
+    provideNativeDateAdapter()
+  ],
+  exports: [
+    
+  ],
 })
 export class CalendarModule { }
