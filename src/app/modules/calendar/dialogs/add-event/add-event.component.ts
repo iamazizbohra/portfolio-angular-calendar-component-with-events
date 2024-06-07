@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InitService } from '../../services/init/init.service';
 
@@ -17,7 +17,6 @@ export class AddEventComponent {
   constructor(
     private initService: InitService,
     public dialogRef: MatDialogRef<AddEventComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.timeList = this.initService.getTimeList();
 
@@ -39,10 +38,7 @@ export class AddEventComponent {
     if (this.addEventForm.valid) {
       this.dialogRef.close({
         role: 'add',
-        data: {
-          ...this.data,
-          ...this.addEventForm.value
-        }
+        data: this.addEventForm.value
       });
     }
   }

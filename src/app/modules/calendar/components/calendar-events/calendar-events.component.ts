@@ -30,7 +30,7 @@ export class CalendarEventsComponent {
   ) {
     this.dateService.selectedDate$
       .pipe(delay(1))
-      .subscribe((date: Date) => {
+      .subscribe(() => {
         this.prevDate = this.dateService.getPrevDate();
         this.currDate = this.dateService.getSelectedDate();
         this.nextDate = this.dateService.getNextDate();
@@ -38,7 +38,7 @@ export class CalendarEventsComponent {
         this.eventList = this.dataService.getEvents();
       });
 
-      this.dataService.events$.pipe(delay(1)).subscribe((events: CalendarEvent[]) => {
+      this.dataService.events$.pipe(delay(1)).subscribe(() => {
         this.eventList = this.dataService.getEvents();
       })
   }

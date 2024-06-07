@@ -12,7 +12,7 @@ export class ShowcasePageComponent {
     this.selectedDate = new Date();
   }
 
-  public dateSelectHandler(e: Date): void {
+  public selectedDateChangeHandler(e: Date): void {
     this.selectedDate = e;
   }
 }

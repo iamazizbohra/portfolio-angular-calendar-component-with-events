@@ -8,7 +8,7 @@
 
                 @for (item of eventList.prevDayEvents; track item) {
                 <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
-                    (click)="presentEditEventDialog(item)">
+                    (click)="presentEditEventDialog(item)" role="presentation">
                     {{ item.title }} <br> {{ item.time }}
                 </div>
                 }
@@ -23,7 +23,7 @@
 
                 @for (item of eventList.currDayEvents; track item) {
                 <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
-                    (click)="presentEditEventDialog(item)">
+                    (click)="presentEditEventDialog(item)" role="presentation">
                     {{ item.title }} <br> {{ item.time }}
                 </div>
                 }
@@ -38,7 +38,7 @@
 
                 @for (item of eventList.nextDayEvents; track item) {
                 <div class="draggable-box" cdkDrag cdkDragBoundary=".content" [cdkDragData]="item"
-                    (click)="presentEditEventDialog(item)">
+                    (click)="presentEditEventDialog(item)" role="presentation">
                     {{ item.title }} <br> {{ item.time }}
                 </div>
                 }

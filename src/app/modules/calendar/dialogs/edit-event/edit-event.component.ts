@@ -18,7 +18,7 @@ export class EditEventComponent {
   constructor(
     private initService: InitService,
     public dialogRef: MatDialogRef<EditEventComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { timeList: string[], event: CalendarEvent },
+    @Inject(MAT_DIALOG_DATA) public data: { event: CalendarEvent },
   ) {
     this.timeList = this.initService.getTimeList();
 

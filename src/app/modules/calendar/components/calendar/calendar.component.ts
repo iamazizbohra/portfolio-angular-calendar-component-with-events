@@ -8,13 +8,13 @@ import { DateService } from '../../services/date/date.service';
 })
 export class CalendarComponent {
 
-  @Output() onDateSelect = new EventEmitter<Date>();
+  @Output() selectedDateChange = new EventEmitter<Date>();
 
   constructor(
     private dateService: DateService,
   ) {
     this.dateService.selectedDate$.subscribe((date: Date) => {
-      this.onDateSelect.emit(date);
+      this.selectedDateChange.emit(date);
     });
   }
 

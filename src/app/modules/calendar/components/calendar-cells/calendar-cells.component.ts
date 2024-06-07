@@ -31,7 +31,7 @@ export class CalendarCellsComponent {
       this.setCellList();
     });
 
-    this.dateService.selectedYear$.subscribe((year: number) => {
+    this.dateService.selectedYear$.subscribe(() => {
       this.setCellList();
     });
 
