@@ -14,9 +14,9 @@ import { delay } from 'rxjs';
 })
 export class CalendarEventsComponent {
   
-  public prevDate: Date | undefined;
-  public currDate: Date | undefined;
-  public nextDate: Date | undefined;
+  private prevDate: Date | undefined;
+  private currDate: Date | undefined;
+  private nextDate: Date | undefined;
   public eventList: EventListType = {
     prevDayEvents: [],
     currDayEvents: [],
@@ -63,5 +63,17 @@ export class CalendarEventsComponent {
 
       this.dataService.transferEvent(containerId, event);
     }
+  }
+
+  public eventPrevDate(): Date | undefined {
+    return this.prevDate;
+  }
+
+  public eventCurrDate(): Date | undefined {
+    return this.currDate;
+  }
+  
+  public eventNextDate(): Date | undefined {
+    return this.nextDate;
   }
 }
