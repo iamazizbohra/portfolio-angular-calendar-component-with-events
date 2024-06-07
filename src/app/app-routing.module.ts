@@ -5,7 +5,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   {
-    path: 'calendar', loadChildren: () => import('./modules/calendar/calendar.module').then(m => m.CalendarModule)
+    path: 'calendar', 
+    loadChildren: () => import('./modules/calendar/calendar.module').then(m => m.CalendarModule)
   },
   {
     path: '', component: WelcomeComponent

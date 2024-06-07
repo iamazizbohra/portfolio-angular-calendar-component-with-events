@@ -27,6 +27,7 @@ import { DateService } from './services/date/date.service';
 import { CalendarCellsComponent } from './components/calendar-cells/calendar-cells.component';
 import { CalendarControlsComponent } from './components/calendar-controls/calendar-controls.component';
 import { CalendarEventsComponent } from './components/calendar-events/calendar-events.component';
+import { CalendarLayoutComponent } from './layouts/calendar-layout/calendar-layout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CalendarEventsComponent } from './components/calendar-events/calendar-e
     ShowcasePageComponent,
     CalendarCellsComponent,
     CalendarControlsComponent,
-    CalendarEventsComponent
+    CalendarEventsComponent,
+    CalendarLayoutComponent
   ],
   imports: [
     CommonModule,

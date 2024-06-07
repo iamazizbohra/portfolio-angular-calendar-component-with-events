@@ -1,13 +1,10 @@
 <div class="page">
-    <h1 class="title">Calendar App</h1>
-    <h3 class="sub-title">
+    <h3 class="title">
         <span *ngIf="selectedDate">{{ selectedDate | date:'EEEE, MMMM d, y' }}</span>
         <span *ngIf="!selectedDate">No date selected</span>
     </h3>
 
     <div class="content">
-        <div class="calendar">
-            <app-calendar (selectedDateChange)="selectedDateChangeHandler($event)"></app-calendar>
-        </div>      
+        <app-calendar (selectedDateChange)="selectedDateChangeHandler($event)"></app-calendar>
     </div>
 </div>
