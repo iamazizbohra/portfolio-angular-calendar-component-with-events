@@ -1,4 +1,6 @@
-# CalendarApp
+[Click here for demo](https://portfolio-angular-calendar-component-with-events.vercel.app)
+
+# Getting Started
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
